@@ -7,11 +7,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 # Load the dataset
-data = pd.read_csv('kc_house_data2.csv')
+data = pd.read_csv('kc_house_data.csv')
 
 
 # Separate the data as test and train data
-X = data.drop(['price', 'date', 'id'], axis=1)
+X = data.drop(['price'], axis=1)
 # X = data[['bedrooms', 'bathrooms', 'sqft_living']]
 y = data['price']
 
@@ -38,7 +38,7 @@ print('Root Mean Squared Error:', rmse)
 # Plot the predicted values against the actual values using a linear regression model
 plt.scatter(y_pred, y_test)
 # Plot a line x = y
-plt.plot([0, max(max(y_test), max(y_pred))], [0, max(max(y_test), max(y_pred))], color='red')
+plt.plot([0, max(*y_test, *y_pred)], [0, max(*y_test, *y_pred)], color='red')
 plt.xlabel('Predicted Price')
 plt.ylabel('Actual Price')
 plt.title('Predicted Price vs Actual Price')
