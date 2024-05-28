@@ -81,8 +81,6 @@ La somme des 3 neurones bleus, avec les poids respectifs, donne -4.3. Avec le bi
 
 Bon tout ça c'est sympa...mais fort heureusement, vu qu'ici on parle d'intelligence artificielle, c'est la machine qui va faire tous ces calculs et décider des poids/biais à mettre ! Dans le jargon, on appelle ce procédé de calcul de l'ordinateur de la **forward propagation** ou du **feed-forward**.
 
-<br>
-
 ### ❓ Mais dis-moi Jamy, comment est-ce qu'on fait pour déterminer les paramètres ?
 On ne va pas rentrer dans les détails mathématiques, mais globalement, le but de l'algorithme va être de minimiser la **fonction de coût** associée au réseau. La fonction de coût prend en paramètres les poids et biais, afin d'en sortir une grosse fonction dont il faut trouver le minimum. C'est comme lâcher une bille, et trouver le creux le plus bas.
 
@@ -190,7 +188,11 @@ y_train = y_train[:1000]
 ```
 
 <br>
+
 <details><summary><b>💡 Indication 1 : librairies conseillées</b></summary>
+
+<br>
+
 Pour commencer à doucement vous aiguiller, voici toutes les librairies utilisées :
 
 ````python
@@ -206,24 +208,45 @@ from keras.utils import to_categorical   # To encode data in the right format
 ___
 
 <details><summary><b>💡 Indication 2a : traitement des données</b></summary>
+
+<br>
+
 Vous pouvez afficher les images en utilisant la fonction <code>plt.imshow(X_train[i], cmap="gray")</code> suivie de <code>plt.show()</code>. Le chiffre correspondant est contenu dans <code>y_train[i]</code>.
 
+<br>
+
 Il faut savoir que les modèles de deep learning vont, la majorité du temps, demander en entrée des vecteurs de données plutôt que des matrices. Hors, on travaille ici avec des images de 28x28px, encodées dans des matrices de 28x28 ! Vous pouvez observer le rendu via le fonction <code>print(X_train[i])</code>.
-Il faut donc transformer les matrices en vecteurs...
+Il faut donc transformer toutes les matrices d'images en vecteurs...
 
 <details><summary><b>💡 Indication 2b : transformation des matrices</b></summary>
-On utilise le code suivant pour paser de matrices 28x28 à un vecteur de 284 éléments :
+
+<br>
+
+On utilise le code suivant pour passer de matrices 28x28 à un vecteur de 284 éléments :
 
 ````python
 X_train = X_train.reshape(X_train.shape[0], X_train.shape[1] * X_train.shape[2])
 X_test = X_test.reshape(X_test.shape[0], X_test.shape[1] * X_test.shape[2])
 ````
 
-Concrètement, on réassigne <code>X_train</code> et <code>X_test</code> (les matrices d'images) un vecteur. La fonction <code>reshape()</code> de <code>numpy</code> prend en premier argument le nombre de lignes et en second argument, le nombre de colonnes. Ici, on veut un ensemble de vecteurs de 28*28 = 784 éléments, donc c'est ce qu'on donne comme second argument. Le premier argument donne juste la taille du jeu de données. <code>X_train</code> est alors une matrice de taille 60 000x784 ! 60 000 entrées d'entraînement réparties sur 60 000 lignes.
-Vous pouvez vous demander pourquoi on a transformé <code>X_train</code> en matrice alors qu'on voulait un vecteur...mais puisqu'on a tout un dataset, on a nécessairement une multitude d'entrées réparties dans une matrice. Mais on est ainsi passés d'une matrice...de matrices, à une matrice de vecteurs, et l'objectif est rempli.
+Concrètement, on réassigne à `X_train` et `X_test` (les matrices d'images) un vecteur.
+
+La fonction `reshape()` de `numpy` prend en premier argument le nombre de lignes et en second argument, le nombre de colonnes. 
+
+⚠️ La subtilité réside ici en le fait que `X_train` et `X_test` encapsulent **toutes** les images. Ce sont donc, à l'origine, des tableaux 2D contenant des matrices 28x28 dans la deuxième colonne. Ce sont ces **matrices 28x28 de la seconde colonne** que l'on cherche à transformer en vecteurs.
+
+<img src="img/x_format.png" width="600">
+
+<br>
+
+Ici, on veut un ensemble de vecteurs de 28*28 = 784 éléments, donc c'est ce qu'on donne comme second argument. Le premier argument donne juste la taille du jeu de données. `X_train` est alors une matrice de taille 60 000x784 ! 60 000 entrées d'entraînement réparties sur 60 000 lignes.
+`X_train` devient alors un tableau 2D contenant des vecteurs de 784 éléments dans la deuxième colonne.
 
 
 <details><summary><b>💡 Indication 2c : encodage des données</b></summary>
+
+<br>
+
 Un réseau de neurones est un algorithme de <b>classifiction</b> ! C'est-à-dire qu'il donne en sortie une probabilité qu'un objet appartienne à une catégorie. Ici, dans <code>y_train</code> et <code>y_test</code>, on a des éléments entiers de 0 à 9 qui représentent le chiffre de l'image. Mais notre réseau de neurones, lui, ne comprend pas très bien ce genre de données. Pour lui simplifier la tâche, on lui traduit ces données dans des catégories simples.
 
 <img src="img/one_hot_encoder.png">
@@ -234,6 +257,7 @@ Ce procédé s'appelle du <code><i>One Hot Encoding</i></code>. Et pour ça, on 
 y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
 ````
+
 </details>
 
 </details>
@@ -247,6 +271,9 @@ Afin d'améliorer les performances, la stabilité, et la compatibilité des donn
 ___
 
 <details><summary><b>💡 Indication 3 : mappage des données</b></summary>
+
+<br>
+
 En regardant les données contenues dans les images, vous voyez que chaque pixel est représenté par une valeur allant de 0 à 255 (les images étant en noir et blanc, on a seulement une valeur de luminance et pas de RGB).
 En divisant par 255, on obtient donc immédiatement des valeurs comprises entre 0 et 1.
 
@@ -264,6 +291,9 @@ Pour vous simplifier le travail, n'hésitez pas à reprendre le réseau neuronal
 ___
 
 <details><summary><b>💡 Indication 4 : définition du modèle</b></summary>
+
+<br>
+
 Suivant les indications ci-dessus, on a (par exemple) :
 
 ````python
