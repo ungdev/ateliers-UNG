@@ -69,5 +69,5 @@ En version très simplifié, ça donne ça. Mais il est important de savoir que 
 
 Il existe plusieurs types d'IA. Chaque IA répond à un beoin spécifique, et seuls certaines IA peuvent répondre à chaque besoin. C'est un jeu d'association pour arriver à trouver quelle IA utiliser pour quel problème !
 
-Pour découvrir les différentes catégories d'IA, on se retrouve à la [partie suivante](supervised_vs_unsupervised_learning.md).
+Pour découvrir les différentes catégories d'IA, on se retrouve à la [partie suivante](1.1_supervised_vs_unsupervised_learning.md).
 

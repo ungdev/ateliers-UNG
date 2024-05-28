@@ -9,14 +9,37 @@
 # Régression linéaire
 
 Une régression linéaire, c'est quoi ?
-Concrètement, c'est juste une fonction affine (pour rappel, `f(x) = ax + b`...oui ça remonte à longtemps, on comprend) qu'on essaie de faire passer au plus proche de nos points.
+Concrètement, c'est juste une fonction affine *(pour rappel, `f(x) = ax + b`...oui ça remonte à longtemps, on comprend)* qu'on essaie de faire passer au plus proche de nos points.
 
 Par exemple, sur l'image ci-dessous, on considère qu'on veut représenter le prix d'une maison en fonction de sa surface. On a, en vert, des informations du marché (une maison à 5k€ pour 5m2, une maison à 15k€ pour 20m2...), et notre algorithme va tracer une droite qui approxime au mieux toutes ces valeurs.
 
 <img src=img/linear_reg.png>
 
-Pour calculer la performance du modèle, on utilise le calcul des **moindres carrés** (somme des résidus au carré, soit la différence entre la valeur réelle et prédite). Le but, c'est de **minimiser** cette valeur, et donc minimiser la fonction calculant l'erreur du modèle.
-Fondamentalement, quand on travaille avec un modèle d'IA, le but final est de chercher à réduire au maximum les différentes métriques d'erreur qu'on peut avoir : les moindres carrés représentent une métrique parmi tant d'autres.
+<br><br>
+
+<details><summary><b> 💭 Apparté importante : les métriques en IA </b></summary>
+
+Pour calculer la performance du modèle, parce que c'est quand même mieux de savoir comment son modèle s'en sort, il existe tout un tas de métriques différentes qui veulent toute dire quelque chose de différent.
+Fondamentalement, quand on travaille avec un modèle d'IA, le but final est de chercher à réduire au maximum les différentes métriques d'erreur qu'on peut avoir.
+<br>
+Pour une régression linéaire, on utilise entre autres le calcul des **moindres carrés** *(MSE : moyenne des résidus au carré, soit la différence entre la valeur réelle et prédite)*.
+
+<img src=img/mse.png width="200">
+
+<br>
+
+Le but, c'est de **minimiser** cette valeur, et donc minimiser la fonction calculant l'erreur du modèle.
+
+> *On utilisera plus tard la ***RMSE***, soit la racine de la MSE.*
+
+L'autre métrique très simple d'utilisation et qu'on utilise partout, c'est *l'accuracy* 🎯, soit la précision du modèle. Tout simplement, c'est la proportion de bonnes prédictions du modèle.
+
+
+### ➡️ Quelles qu'elles soient, il faut **toujours** évaluer les modèles sur des métriques mathématiques. 
+
+</details>
+
+<br>
 
 
 ## 1. Traitement des données (ou presque)
@@ -66,12 +89,20 @@ scale = StandardScaler()   # Initialize the scaler
 scale.fit(X)   # Fit it to the data
 scaled_X = scale.transform(X)   # Transform the data according to the fitted scaler
 ```
-
+<br>
 
 La partie de mise en place faite, on s'occupe de l'algorithme.
-En intelligence artificielle, il faut toujours séparer les jeux de données en deux groupes distincts : les données utilisées pour entraîner le modèle, et les données utilisées pour tester le modèle : pendant sa phase d'apprentissage, on entraîne le modèle sur généralement **80%** du jeu de données, pour ensuite l'évaluer sur **20%** du jeu de données, qu'il n'a jamais vu auparavant et qu'il n'utilisera pas pour améliorer son modèle. Cela permet de tester la robustesse, capacité à généraliser, du modèle face à des données nouvelles.
+En intelligence artificielle, il faut toujours **séparer les jeux de données** en deux groupes distincts :
+- les données utilisées pour **entraîner** le modèle
+- les données utilisées pour **tester** le modèle
 
-Pour séparer nos données, on utilise la fonction `test_train_split` de la librairie `scikit-learn` qui fait tout pour nous, en utilisant une seed :
+Pendant sa phase d'apprentissage, on entraîne le modèle sur généralement **80%** du jeu de données, pour ensuite l'évaluer sur **20%** du jeu de données, qu'il n'a jamais vu auparavant et qu'il n'utilisera pas pour améliorer son modèle. Cela permet de tester la robustesse, capacité à généraliser, du modèle face à des données nouvelles.
+
+<img src=img/test_train.png>
+
+<br>
+
+Pour séparer nos données, on utilise la fonction `test_train_split()` de la librairie `scikit-learn` qui fait tout pour nous, en utilisant une *seed* ( *résultat aléatoire* = f(seed) ) :
 ```py
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)   # test_size = proportion of dataset used for testing ; random_state = seed
 ```
@@ -125,5 +156,6 @@ plt.show()
 ```
 
 Si vous le souhaitez, pour améliorer les performances du modèle, vous pouvez tester avec + de variables. On a ainsi rapidement eu 22% d'erreur en moins...
-Le code final est disponible dans ce dossier, sur le GitHub.
+
+> 🐈‍⬛ Le code final est disponible dans ce dossier, sur le GitHub.
 
