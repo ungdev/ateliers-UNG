@@ -7,22 +7,19 @@ from keras.utils import to_categorical
 
 # Load the MNIST dataset
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
+print(X_train.shape, y_train.shape)
 
 # Flatten the data
 X_train = X_train.reshape(X_train.shape[0], X_train.shape[1] * X_train.shape[2])[:1000]
 y_train = y_train[:1000]
 X_test = X_test.reshape(X_test.shape[0], X_test.shape[1] * X_test.shape[2])
 
-print(y_train.shape)
-print(y_train[:10])
 y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
 
 # y_train = np.array([np.eye(10)[i] for i in y_train])
 # y_test = np.array([[0] * i + [1] + [0] * (9 - i) for i in y_test])
-print(y_train.shape, y_test.shape)
-print(y_train[:10])
-exit()
+
 
 # Preprocess the data
 X_train = X_train / 255.0
