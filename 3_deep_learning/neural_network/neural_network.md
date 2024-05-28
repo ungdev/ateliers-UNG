@@ -14,7 +14,7 @@
 <br>
 
 
-# Réseau de neurones
+# 🧠 Réseau de neurones
  
 Bouh ça fait peur, mais vous inquiétez pas, c'est en fait assez chill (ou presque).
 
@@ -159,6 +159,8 @@ plt.ylabel('Actual Price')
 plt.title('Predicted Price vs Actual Price')
 plt.show()
 ```
+
+<br>
 
 ## 🔢 3. Pratique du réseau de neurones autonome
 
@@ -322,6 +324,11 @@ print('Test accuracy:', test_acc)
 
 
 En fonction de vos paramètres, on obtiendra facilement un très bon résultat au-dessus de 80% compte tenu de la simplicité du modèle et du peu de données utilisées.
+
+
+> 🐈‍⬛ Si vous en avez besoin, le code final est disponible dans ce dossier, sur le GitHub.
+
+
 
 <br>
 
