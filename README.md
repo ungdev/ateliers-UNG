@@ -4,6 +4,9 @@
 - [👨‍🏫 Présentation de l'atelier UNG](#👨‍🏫-présentation-de-latelier-ung)
 - [👷 Remerciements](#👷-remerciements)
 - [🛠️ Déroulement de l'atelier](#🛠️-déroulement-de-latelier)
+- [📜 Règlement](#📜-règlement)
+- [📑 Sommaire des ateliers](#📑-sommaire-des-ateliers)
+- [👷 Remerciements](#👷-remerciements)
 
 ## 👨‍🏫 Présentation de l'atelier UNG
 Pour cet atelier, l'UNG vous propose une petite introduction à l'IA : concrètement, c'est quoi une IA, ses différents heuristiques, et on va vous présenter et faire pratiquer deux modèles d'IA : la **régression logistique 📈**, un heuristique de **Machine Learning** et un **réseau de neurones 🧠**, un heuristique de **Deep Learning**.
@@ -45,8 +48,8 @@ Voici la liste des thématiques actuellement disponibles et envisageables à l'a
 <br>
 1.3. [Machine vs Deep Learning]
 
-### 2. [Le Machine Learning](1_machine_learning/)
-2.1. [La régression linéaire](1_machine_learning/linear_regression/linear_regression.md)
+### 2. [Le Machine Learning](2_machine_learning/)
+2.1. [La régression linéaire](2_machine_learning/linear_regression/linear_regression.md)
 <br>
 2.2. [La régression logistique et polynomiale]
 <br>
@@ -58,10 +61,10 @@ Voici la liste des thématiques actuellement disponibles et envisageables à l'a
 <br>
 2.6. [Naive Bayes]
 
-### 3. [Le Deep Learning](2_deep_learning/)
-3.1. [Réseaux de neurones simples](2_deep_learning/neural_network/neural_network.md)
+### 3. [Le Deep Learning](3_deep_learning/)
+3.1. [Réseaux de neurones simples](3_deep_learning/neural_network/neural_network.md)
 <br>
-3.2. [Réseaux de neurones convolutifs]
+3.2. [CNN, réseaux de neurones convolutifs]
 <br>
 3.3. [ANN et RNN]
 
@@ -84,5 +87,6 @@ Si certains de ces chapitres vous titillent tout particulièrement, n'hésitez p
 ## 👷 Remerciements
 * Teddy Roncin et Anouchka Neveu, pour l'écriture de l'atelier
 * Anouchka Neveu, pour les visuels et la communication
+* Noé Landré, pour la relecture
 * Le bureau de l'association, pour permettre l'existence de ces ateliers
 * Et tous les autres membres de l'UNG qui ont participé à ce projet !

@@ -1,0 +1,22 @@
+# Apprentissage supervisé et non-supervisé
+
+La première chose qui va nous aiguiller dans le choix d'un heuristique d'IA, c'est si on utilise un modèle d'apprentissage supervisé ou non-supervisé.
+
+### ➡️ On utilise des mots bien compliqués pour simplement dire "est-ce que la donnée que je donne à mon IA est déjà labellisée ?".
+
+<img src=img/supervised_unsupervised.png>
+
+Par exemple, si vous voulez définir l'espèce d'une fleur en fonction de la taille de ses pétales et la longueur de la tige, vous allez avoir probablement un graphique du genre du dessus, avec des points sur un plan. Si c'est l'espèce A, ce sont des ronds bleus, si c'est l'espèce B, ce sont des croix rouges.
+
+### 🏷️ Apprentissage supervisé
+Dans le cas d'un apprentissage **supervisé**, vous dites à votre algorithme "eh, regarde, ce point qui est en [2, 2] est de l'espèce A, et le point en [4, 3] est de l'espèce B". Grâce à ces infos, l'algorithme va tracer une frontière de décision pour dire ce qui est à gauche de cette frontière, c'est l'espèce A, et ce qui est à droite, c'est l'espèce B.
+
+### ❌🏷️ Apprentissage non-supervisé
+Pour un apprentissage **non-supervisé**, on ne **dit pas** à l'algorithme l'espèce à laquelle appartient chaque point, et c'est l'algorithme qui va former des ***clusters*** entre les points. En gros, il va reconnaître des motifs dans la disposition des données pour former des groupes de points qui ont l'air de se ressembler.
+
+Fondamentalement, les algorithmes supervisés feront souvent un meilleur travail, donc si votre donnée est labellisée, vous avez le luxe de choisir un algorithme qui utilise un apprentissage supervisé.
+
+<br><br>
+
+Pour découvrir les autres facteurs qui catégorisent les IA, on se retrouve à la [partie suivante](regression_classification.md).
+

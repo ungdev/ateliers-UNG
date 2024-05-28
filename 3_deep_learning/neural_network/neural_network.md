@@ -4,7 +4,7 @@
 | 🧠 Deep Learning    | 🏷️ Supervised or ❌🏷️ Unsupervised Learning     | 🔢 Régression or 🗳️ Classification     |
 
 
-<br><br>
+<br>
 
 # Réseau de neurones
  
@@ -14,7 +14,7 @@ Bouh ça fait peur, mais vous inquiétez pas, c'est en fait assez chill (ou pres
 
 Construire un réseau de neurones, ça consiste à concaténer tout un tas de fonctions pour avoir des prédictions vraiment meilleures. Comme si on passait notre donnée dans une suite de régressions linéaires (on fait pas ça avec l'algorithme précédent de régression linéaire parce que c'est pas opti et que ça marche juste pas, mais ça vous donne une idée du principe).
 
-Pour ça, on utilise des neurones qui sont disposées sur des couches différentes.
+Pour ça, on utilise des neurones qui sont disposés sur des couches différentes.
 
 <img src=img/cat_pred.png>
 

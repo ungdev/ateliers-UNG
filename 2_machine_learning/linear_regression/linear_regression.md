@@ -4,12 +4,12 @@
 | ⚙️ Machine Learning    | 🏷️ Supervised Learning     | 🔢 Régression     |
 
 
-<br><br>
+<br>
 
 # Régression linéaire
 
 Une régression linéaire, c'est quoi ?
-Concrètement, c'est juste une fonction affine (f(x) = ax + b) qu'on essaie de faire passer au plus proche de nos points.
+Concrètement, c'est juste une fonction affine (pour rappel, `f(x) = ax + b`...oui ça remonte à longtemps, on comprend) qu'on essaie de faire passer au plus proche de nos points.
 
 Par exemple, sur l'image ci-dessous, on considère qu'on veut représenter le prix d'une maison en fonction de sa surface. On a, en vert, des informations du marché (une maison à 5k€ pour 5m2, une maison à 15k€ pour 20m2...), et notre algorithme va tracer une droite qui approxime au mieux toutes ces valeurs.
 
@@ -27,10 +27,10 @@ Pour ça, on représente une matrice de corrélation, qui calcule le "score" de 
 Concrètement, plus la case est claire, plus les valeurs sont corrélées (positivement, ou négativement). On va donc exclure beaucoup de variables, comme `yr_renovated`, `sqft_lot` ou `condition`. On finit avec un jeu de données à 4 dimensions (pour l'exemple ici).
 
 Si vous voulez traiter le jeu de données vous-même, vous pouvez le récupérer sur Kaggle :
-//todo: lien kaggle
+> [House Sales in King County, USA](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction/data)
 
 Sinon, voici le jeu de données pré-traité :
-//todo: lien jeu de données
+> [SIMPLE_House Sales in King County, USA](kc_house_data.csv)
 
 ## 2. Pratique de la régression 
 
