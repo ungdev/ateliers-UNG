@@ -45,7 +45,6 @@ Voici la liste des thématiques actuellement disponibles et envisageables à l'a
 <br>
 
 1.2. [Régression vs Classification](1_presentation/1.2_regression_classification.md)
-
 <br>
 
 1.3. [Machine vs Deep Learning](1_presentation/1.3_machine_deep.md)
