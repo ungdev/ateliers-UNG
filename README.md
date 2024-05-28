@@ -45,12 +45,9 @@ Voici la liste des thématiques actuellement disponibles et envisageables à l'a
 <br>
 1.3. [Machine vs Deep Learning]
 
-
-
 <br>
 
 ### 2. [Le Machine Learning](1_machine_learning/)
-<br>
 2.1. [La régression linéaire](1_machine_learning/linear_regression/linear_regression.md)
 <br>
 2.2. [La régression logistique et polynomiale]
@@ -63,8 +60,6 @@ Voici la liste des thématiques actuellement disponibles et envisageables à l'a
 <br>
 2.6. [Naive Bayes]
 
-
-
 <br>
 
 ### 3. [Le Deep Learning](2_deep_learning/)
@@ -73,8 +68,6 @@ Voici la liste des thématiques actuellement disponibles et envisageables à l'a
 3.2. [Réseaux de neurones convolutifs]
 <br>
 3.3. [ANN et RNN]
-
-
 
 <br>
 
