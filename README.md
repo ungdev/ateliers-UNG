@@ -40,12 +40,16 @@ Nous n'avons que deux règles :
 Voici la liste des thématiques actuellement disponibles et envisageables à l'avenir :
 
 
-### 1. [Présentation : qu'est-ce qu'une IA ?]()
-1.1. [Apprentissage supervisé vs non-supervisé]
+### 1. [Présentation : qu'est-ce qu'une IA ?](1_presentation/1_presentation.md)
+1.1. [Apprentissage supervisé vs non-supervisé](1_presentation/1.1_supervised_vs_unsupervised_learning.md)
 <br>
-1.2. [Régression vs Classification]
+
+1.2. [Régression vs Classification](1_presentation/1.2_regression_classification.md)
+
 <br>
-1.3. [Machine vs Deep Learning]
+
+1.3. [Machine vs Deep Learning](1_presentation/1.3_machine_deep.md)
+
 
 ### 2. [Le Machine Learning](2_machine_learning/)
 2.1. [La régression linéaire](2_machine_learning/linear_regression/linear_regression.md)
