@@ -38,15 +38,18 @@ Nous n'avons que deux règles :
 Voici la liste des thématiques actuellement disponibles et envisageables à l'avenir :
 
 
-1. [Présentation : qu'est-ce qu'une IA ?]()
-<br>
+### 1. [Présentation : qu'est-ce qu'une IA ?]()
 1.1. [Apprentissage supervisé vs non-supervisé]
 <br>
 1.2. [Régression vs Classification]
 <br>
 1.3. [Machine vs Deep Learning]
 
-2. [Le Machine Learning](1_machine_learning/)
+
+
+<br>
+
+### 2. [Le Machine Learning](1_machine_learning/)
 <br>
 2.1. [La régression linéaire](1_machine_learning/linear_regression/linear_regression.md)
 <br>
@@ -60,16 +63,22 @@ Voici la liste des thématiques actuellement disponibles et envisageables à l'a
 <br>
 2.6. [Naive Bayes]
 
-3. [Le Deep Learning](2_deep_learning/)
+
+
 <br>
+
+### 3. [Le Deep Learning](2_deep_learning/)
 3.1. [Réseaux de neurones simples](2_deep_learning/neural_network/neural_network.md)
 <br>
 3.2. [Réseaux de neurones convolutifs]
 <br>
 3.3. [ANN et RNN]
 
-4. [Les grands thèmes]
+
+
 <br>
+
+### 4. [Les grands thèmes]
 4.1. [Clustering]
 <br>
 4.2. [LLM, les IA qui parlent]
