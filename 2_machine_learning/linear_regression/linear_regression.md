@@ -6,7 +6,14 @@
 
 <br>
 
-# Régression linéaire
+## Sommaire
+- [👨‍🏫 Présentation de la régression linéaire](#-régression-linéaire)
+- [🛠️ Traitement des données](#️-1-traitement-des-données-ou-presque)
+- [👷 Pratique de la régression](#-2-pratique-de-la-régression)
+
+<br>
+
+# 👨‍🏫 Régression linéaire
 
 Une régression linéaire, c'est quoi ?
 Concrètement, c'est juste une fonction affine *(pour rappel, `f(x) = ax + b`...oui ça remonte à longtemps, on comprend)* qu'on essaie de faire passer au plus proche de nos points.
@@ -18,10 +25,15 @@ Par exemple, sur l'image ci-dessous, on considère qu'on veut représenter le pr
 <br><br>
 
 <details><summary><b> 💭 Apparté importante : les métriques en IA </b></summary>
-
-Pour calculer la performance du modèle, parce que c'est quand même mieux de savoir comment son modèle s'en sort, il existe tout un tas de métriques différentes qui veulent toute dire quelque chose de différent.
-Fondamentalement, quand on travaille avec un modèle d'IA, le but final est de chercher à réduire au maximum les différentes métriques d'erreur qu'on peut avoir.
 <br>
+Pour calculer la performance du modèle, parce que c'est quand même mieux de savoir comment son modèle s'en sort, il existe tout un tas de métriques différentes qui veulent toute dire quelque chose de différent.
+
+<br>
+
+Fondamentalement, quand on travaille avec un modèle d'IA, le but final est de chercher à réduire au maximum les différentes métriques d'erreur qu'on peut avoir.
+
+<br>
+
 Pour une régression linéaire, on utilise entre autres le calcul des **moindres carrés** *(MSE : moyenne des résidus au carré, soit la différence entre la valeur réelle et prédite)*.
 
 <img src=img/mse.png width="200">
@@ -42,7 +54,7 @@ L'autre métrique très simple d'utilisation et qu'on utilise partout, c'est *l'
 <br>
 
 
-## 1. Traitement des données (ou presque)
+## 🛠️ 1. Traitement des données (ou presque)
 
 Pour mettre en pratique une régression linéaire, on utilise un simple jeu de données sur le prix des maisons. Ce jeu de données présente 19 dimensions, mais toutes les variables ne sont pas importantes à conserver, car pas forcément fortement corrélée au prix !
 Pour ça, on représente une matrice de corrélation, qui calcule le "score" de corrélation entre chacune des variables (on utilise le calcul de [Pearson](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)).
@@ -55,7 +67,9 @@ Si vous voulez traiter le jeu de données vous-même, vous pouvez le récupérer
 Sinon, voici le jeu de données pré-traité :
 > [SIMPLE_House Sales in King County, USA](kc_house_data.csv)
 
-## 2. Pratique de la régression 
+<br>
+
+## 👷 2. Pratique de la régression 
 
 Pour la régression linéaire, il faut tout d'abord installer les librairies nécessaires. Pour ce faire, exécutez la commande suivante :
 
@@ -159,3 +173,9 @@ Si vous le souhaitez, pour améliorer les performances du modèle, vous pouvez t
 
 > 🐈‍⬛ Le code final est disponible dans ce dossier, sur le GitHub.
 
+## Bravo ! 🎉
+Vous êtes arrivés à la fin de cette partie et avez rédigé votre premier algorithme de Machine Learning 👏.
+
+Vous êtes maintenant libre de suivre la suite des chapitres de l'atelier, que ce soit en Machine Learning ou Deep Learning, en vous référant au [sommaire](/README.md/#-sommaire-des-ateliers)
+
+Nous restons à votre disposition pour la moindre question, donc n'hésitez pas 😉

@@ -2,7 +2,6 @@
 
 ## Sommaire
 - [👨‍🏫 Présentation de l'atelier UNG](#👨‍🏫-présentation-de-latelier-ung)
-- [👷 Remerciements](#👷-remerciements)
 - [🛠️ Déroulement de l'atelier](#🛠️-déroulement-de-latelier)
 - [📜 Règlement](#📜-règlement)
 - [📑 Sommaire des ateliers](#📑-sommaire-des-ateliers)
