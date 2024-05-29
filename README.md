@@ -8,7 +8,7 @@
 - [👷 Remerciements](#👷-remerciements)
 
 ## 👨‍🏫 Présentation de l'atelier UNG
-Pour cet atelier, l'UNG vous propose une petite introduction à l'IA : concrètement, c'est quoi une IA, ses différents heuristiques, et on va vous présenter et faire pratiquer deux modèles d'IA : la **régression logistique 📈**, un heuristique de **Machine Learning** et un **réseau de neurones 🧠**, un heuristique de **Deep Learning**.
+Pour cet atelier, l'UNG vous propose une petite introduction à l'IA : concrètement, c'est quoi une IA, ses différents heuristiques, et on va vous présenter et faire pratiquer deux modèles d'IA : la **régression linéaire 📈**, un heuristique de **Machine Learning** et un **réseau de neurones 🧠**, un heuristique de **Deep Learning**.
 
 <details><summary>Il y en a pour <b>tous les niveaux</b></summary>
 
@@ -47,7 +47,7 @@ Voici la liste des thématiques actuellement disponibles et envisageables à l'a
 1.2. [Régression vs Classification](1_presentation/1.2_regression_classification.md)
 <br>
 
-1.3. [Machine vs Deep Learning](1_presentation/1.3_machine_deep.md)
+1.3. [Machine Learning vs Deep Learning](1_presentation/1.3_machine_deep.md)
 
 
 ### 2. [Le Machine Learning](2_machine_learning/)

@@ -34,11 +34,13 @@ Pour ça, on utilise des neurones qui sont disposés sur des couches différente
 
 ### ❓ Mais dis-moi Jamy, qu'est-ce qu'un neurone ?
 
-Un neurone, c'est une **fonction linéaire** qui va faire un simple calcul sur nos données. On va l'accoler à une fonction d'activation, qui va casser la linéarité du réseau (sinon, il servirait pas à grand chose) et donner une sortie précise à notre neurone.
+Un neurone, c'est une **fonction linéaire** qui va faire un simple calcul sur nos données. On va l'accoler à une fonction d'activation, qui va casser la linéarité du réseau (sinon, il servirait pas à grand chose, puisqu'on pourrait le simplifier en une simple fonction linéaire, l'algorithme deviendrait donc une "régression linéaire de Rube-Goldberg") et donner une sortie précise à notre neurone.
 
 Cette sortie est ensuite utilisée par d'autres neurones de la couche suivante, et ainsi de suite. C'est le "maillage" que vous voyez sur l'image : ici, tous les neurones d'une couche sont tous liés à ceux de la couche suivante.
 
 ### ❓ Mais dis-moi Jamy, qu'est-ce qu'une fonction d'activation ?
+Une fonction d'activation, c'est donc une fonction **non linéaire** qui sera appliquée sur la sortie d'un neurone, c'est-à-dire sa fonction linéaire interne.
+
 Il en existe tout un tas, mais voici quelques exemples :
 
 <img src=img/activation_functions.png>
@@ -82,13 +84,13 @@ La somme des 3 neurones bleus, avec les poids respectifs, donne -4.3. Avec le bi
 Bon tout ça c'est sympa...mais fort heureusement, vu qu'ici on parle d'intelligence artificielle, c'est la machine qui va faire tous ces calculs et décider des poids/biais à mettre ! Dans le jargon, on appelle ce procédé de calcul de l'ordinateur de la **forward propagation** ou du **feed-forward**.
 
 ### ❓ Mais dis-moi Jamy, comment est-ce qu'on fait pour déterminer les paramètres ?
-On ne va pas rentrer dans les détails mathématiques, mais globalement, le but de l'algorithme va être de minimiser la **fonction de coût** associée au réseau. La fonction de coût prend en paramètres les poids et biais, afin d'en sortir une grosse fonction dont il faut trouver le minimum. C'est comme lâcher une bille, et trouver le creux le plus bas.
+On ne va pas rentrer dans les détails mathématiques, mais globalement, le but de l'algorithme va être de minimiser la **fonction de coût** associée au réseau. La fonction de coût prend en paramètres les poids et biais, afin d'en sortir une grosse fonction dont il faut trouver le minimum. Et comment on fait ça ? Eh bien, en utilisant la gravité (visuellement c'est ce qu'on peut imaginer) : c'est comme lâcher une bille et attendre qu'elle s'arrête dans un creu.
 
 <img src=img/cost_function_3d.png width="300">
 
-Pour trouver ce minimum, on utilise un procédé mathématique un peu long et pénible qui s'appelle la **descente de gradient**. Concrètement, on calcule itérativement le gradient *(des dérivées de fonctions à plusieurs variables, si vous avez pas encore fait MT04 ou PHYS11)* en descendant la pente jusqu'à trouver le minimum.
+Pour trouver ce minimum, on utilise un procédé mathématique un peu long et pénible qui s'appelle la **descente de gradient**. Concrètement, on calcule itérativement le gradient *(des dérivées de fonctions à plusieurs variables, si vous avez pas encore fait MT04 ou PHYS11)* en descendant la pente jusqu'à trouver le minimum. Et c'est la raison pour laquelle avoir des calculs simples dans les neurones est si important : ça permet de calculer les dérivées partielles très facilement !
 
-S'il est local c'est bien, global c'est mieux, mais c'est pas toujours évident (Eviden).
+Si le minimum est local c'est bien, global c'est mieux, mais c'est pas toujours évident (Eviden).
 
 <img src=img/gradient_descent.png>
 
@@ -164,7 +166,7 @@ plt.show()
 
 ## 🔢 3. Pratique du réseau de neurones autonome
 
-On va maintenant vous laisser pratiquer de vous-même les réseaux de neurones, en repartant de la base précédente, pour travailler sur le jeu de données MNIST, qui contient 70 000 images de chiffres écrits à la main sur des images de 28x28px.
+On va maintenant vous laisser pratiquer de vous-même les réseaux de neurones, en repartant de la base précédente, pour travailler sur le jeu de données MNIST (le Hello world de l'IA), qui contient 70 000 images de chiffres écrits à la main sur des images de 28x28px.
 
 <img src=img/MNIST.jpg>
 
@@ -190,6 +192,9 @@ y_train = y_train[:1000]
 ```
 
 <br>
+
+Pour vous simplifier le travail, n'hésitez pas à reprendre le réseau neuronal précédent, en retirant éventuellement une couche cachée pour limiter le temps de calcul.
+⚠️ Utilisez une fonction d'activation de la couche de sortie adaptée ! Pensez au mappage de vos données, à leur forme, etc...
 
 <details><summary><b>💡 Indication 1 : librairies conseillées</b></summary>
 
@@ -217,8 +222,9 @@ Vous pouvez afficher les images en utilisant la fonction <code>plt.imshow(X_trai
 
 <br>
 
-Il faut savoir que les modèles de deep learning vont, la majorité du temps, demander en entrée des vecteurs de données plutôt que des matrices. Hors, on travaille ici avec des images de 28x28px, encodées dans des matrices de 28x28 ! Vous pouvez observer le rendu via le fonction <code>print(X_train[i])</code>.
+Il faut savoir que les modèles de deep learning vont, la majorité du temps, demander en entrée des vecteurs de données plutôt que des matrices. Hors, on travaille ici avec des images de 28x28px, encodées dans des matrices de 28x28 ! Vous pouvez observer le rendu via la fonction <code>print(X_train[i])</code>.
 Il faut donc transformer toutes les matrices d'images en vecteurs...
+</details>
 
 <details><summary><b>💡 Indication 2b : transformation des matrices</b></summary>
 
@@ -243,7 +249,7 @@ La fonction `reshape()` de `numpy` prend en premier argument le nombre de lignes
 
 Ici, on veut un ensemble de vecteurs de 28*28 = 784 éléments, donc c'est ce qu'on donne comme second argument. Le premier argument donne juste la taille du jeu de données. `X_train` est alors une matrice de taille 60 000x784 ! 60 000 entrées d'entraînement réparties sur 60 000 lignes.
 `X_train` devient alors un tableau 2D contenant des vecteurs de 784 éléments dans la deuxième colonne.
-
+</details>
 
 <details><summary><b>💡 Indication 2c : encodage des données</b></summary>
 
@@ -262,17 +268,15 @@ y_test = to_categorical(y_test)
 
 </details>
 
-</details>
-
-</details>
-
 ___
 
-Afin d'améliorer les performances, la stabilité, et la compatibilité des données, on va toujours chercher à les translater sur une plage <code>[-1, 1]</code> ou <code>[0, 1]</code>. Par exemple, la fonction d'activation <b><i>sigmoïde</i></b> n'accepte que des entrées entre 0 et 1 (jusque-là, logique). Donc pour mieux faire converger nos modèles, pensez à mapper les données sur la plage appropriée !
+<details><summary><b>💡 Indication 3a : plage des données</b></summary>
 
-___
+Afin d'améliorer les performances, la stabilité, et la compatibilité des données, on va toujours chercher à les avoir sur une plage <code>[-1, 1]</code> ou <code>[0, 1]</code>. Ça permet notamment d'avoir des poids qui n'ont pas besoin d'être précis au milliardième près.
 
-<details><summary><b>💡 Indication 3 : mappage des données</b></summary>
+</details>
+
+<details><summary><b>💡 Indication 3b : mappage des données</b></summary>
 
 <br>
 
@@ -284,11 +288,6 @@ X_train = X_train / 255.0
 X_test = X_test / 255.0
 ````
 </details>
-
-___
-
-Pour vous simplifier le travail, n'hésitez pas à reprendre le réseau neuronal précédent, en retirant éventuellement une couche cachée pour limiter le temps de calcul.
-⚠️ Utilisez une fonction d'activation de la couche de sortie adaptée ! Pensez au mappage de vos données...
 
 ___
 

@@ -54,7 +54,7 @@ L'IA fonctionne généralement en utilisant des algorithmes et des modèles math
 
 1. **📊 Collecte les données** : L'IA nécessite une grande quantité de données pour apprendre et s'améliorer. Ces données peuvent être des images, des textes, des vidéos, etc. **C'est une étape cruciale !** Si les données récoltées sont mauvaises ou de moindre qualité, l'IA aura des performance médiocres.
 
-2. **🧩 Prétraitement des données** : Avant d'être utilisées par l'IA, les données doivent être nettoyées, normalisées et préparées de manière appropriée. Des données mauvaises ou inutiles ? Poubelle. Des données avec des formats différents ? A reformater.
+2. **🧩 Prétraitement des données** : Avant d'être utilisées par l'IA, les données doivent être nettoyées, normalisées et préparées de manière appropriée. Des données mauvaises ou inutiles ? Poubelle. Des données avec des formats différents ? A reformater. Des données qui ne sont pas convertissables en nombre ? Débrouillez-vous, mais il faut pouvoir faire des maths dessus.
 
 3. **⚙️ Entraînement du modèle** : L'IA utilise les données prétraitées pour entraîner un modèle, qui est essentiellement un algorithme capable de prendre des décisions ou de prédire des résultats.
 

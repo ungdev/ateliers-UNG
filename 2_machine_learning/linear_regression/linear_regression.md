@@ -18,7 +18,7 @@
 Une régression linéaire, c'est quoi ?
 Concrètement, c'est juste une fonction affine *(pour rappel, `f(x) = ax + b`...oui ça remonte à longtemps, on comprend)* qu'on essaie de faire passer au plus proche de nos points.
 
-Par exemple, sur l'image ci-dessous, on considère qu'on veut représenter le prix d'une maison en fonction de sa surface. On a, en vert, des informations du marché (une maison à 5k€ pour 5m2, une maison à 15k€ pour 20m2...), et notre algorithme va tracer une droite qui approxime au mieux toutes ces valeurs.
+Par exemple, sur l'image ci-dessous, on considère qu'on veut représenter le prix d'une maison en fonction de sa surface. On a, en vert, des informations du marché (une maison à 5k€ pour 5m2, une maison à 15k€ pour 20m2...), et notre algorithme va tracer une droite qui approxime au mieux toutes ces valeurs (l'approximation est représentée par les points oranges).
 
 <img src=img/linear_reg.png>
 
@@ -103,7 +103,9 @@ scale = StandardScaler()   # Initialize the scaler
 scale.fit(X)   # Fit it to the data
 scaled_X = scale.transform(X)   # Transform the data according to the fitted scaler
 ```
-<br>
+<i>Dans une régression linéaire, ça ne changera rien de scale les données, puisque diminuer l'échelle des données va simplement faire augmenter de manière inversement proportionnelle les coefficients de la régression linéaire, ce qui annulera l'effet du scaler. Mais par principe, on le fait à chaque fois, ça ne coûte rien, et ça peut éviter des problèmes.</i>
+
+<bt/>
 
 La partie de mise en place faite, on s'occupe de l'algorithme.
 En intelligence artificielle, il faut toujours **séparer les jeux de données** en deux groupes distincts :
@@ -116,7 +118,7 @@ Pendant sa phase d'apprentissage, on entraîne le modèle sur généralement **8
 
 <br>
 
-Pour séparer nos données, on utilise la fonction `test_train_split()` de la librairie `scikit-learn` qui fait tout pour nous, en utilisant une *seed* ( *résultat aléatoire* = f(seed) ) :
+Pour séparer nos données, on utilise la fonction `test_train_split()` de la librairie `scikit-learn` qui fait tout pour nous, en utilisant une *seed* qui nous permet d'avoir un entraînement déterministe (*résultat aléatoire* = f(seed)) :
 ```py
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)   # test_size = proportion of dataset used for testing ; random_state = seed
 ```
@@ -176,6 +178,6 @@ Si vous le souhaitez, pour améliorer les performances du modèle, vous pouvez t
 ## Bravo ! 🎉
 Vous êtes arrivés à la fin de cette partie et avez rédigé votre premier algorithme de Machine Learning 👏.
 
-Vous êtes maintenant libre de suivre la suite des chapitres de l'atelier, que ce soit en Machine Learning ou Deep Learning, en vous référant au [sommaire](/README.md/#-sommaire-des-ateliers)
+Vous êtes maintenant libre de suivre la suite des chapitres de l'atelier, que ce soit en Machine Learning ou Deep Learning, en vous référant au [sommaire](/README.md#-sommaire-des-ateliers)
 
 Nous restons à votre disposition pour la moindre question, donc n'hésitez pas 😉
