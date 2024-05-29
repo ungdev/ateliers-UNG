@@ -152,6 +152,8 @@ y_pred = model.predict(X_test)[:, 0]
 rmse = np.sqrt(np.mean((y_test - y_pred) ** 2))
 print('Root Mean Squared Error:', rmse)
 
+model.save('mnist.h5')
+
 # Plot the predicted values against the actual values using a linear regression model
 plt.scatter(y_pred, y_test)
 # Plot a line x = y
@@ -327,7 +329,7 @@ En fonction de vos paramètres, on obtiendra facilement un très bon résultat a
 
 > 🐈‍⬛ Si vous en avez besoin, le code final est disponible dans ce dossier, sur le GitHub.
 
-
+Après avoir entraîné votre réseau de neurones, vous pouvez essayer de jouer avec en exécutant le script `neural_network_mnist_test.py`. Attention cependant ! Vous aurez besoin d'avoir un modèle un peu plus gros si vous voulez avoir des résultats ! Il faudra aussi bien faire en sorte de faire les chiffres de la même manière que dans le dataset : le 1 est un trait unique, pas forcément de barre sur le 7, etc...
 
 <br>
 
