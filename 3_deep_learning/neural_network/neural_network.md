@@ -168,7 +168,7 @@ plt.show()
 
 ## 🔢 3. Pratique du réseau de neurones autonome
 
-On va maintenant vous laisser pratiquer de vous-même les réseaux de neurones, en repartant de la base précédente, pour travailler sur le jeu de données MNIST (le Hello world de l'IA), qui contient 70 000 images de chiffres écrits à la main sur des images de 28x28px.
+On va maintenant vous laisser pratiquer de vous-même les réseaux de neurones, en repartant de la base précédente, pour travailler sur le jeu de données MNIST (largement utilisé pour s'entraîner en IA), qui contient 70 000 images de chiffres écrits à la main sur des images de 28x28px.
 
 <img src=img/MNIST.jpg>
 
@@ -275,6 +275,8 @@ ___
 <details><summary><b>💡 Indication 3a : plage des données</b></summary>
 
 Afin d'améliorer les performances, la stabilité, et la compatibilité des données, on va toujours chercher à les avoir sur une plage <code>[-1, 1]</code> ou <code>[0, 1]</code>. Ça permet notamment d'avoir des poids qui n'ont pas besoin d'être précis au milliardième près.
+
+Par exemple, la fonction d'activation <b><i>sigmoïde</i></b> n'accepte que des entrées entre 0 et 1 (jusque-là, logique). Donc pour mieux faire converger nos modèles, pensez à mapper les données sur la plage appropriée !
 
 </details>
 
